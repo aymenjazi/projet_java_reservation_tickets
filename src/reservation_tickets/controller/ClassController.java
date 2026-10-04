@@ -27,10 +27,12 @@ public class ClassController extends Config{
 				ok=result.next();
 			}
 			System.out.println(liste);
+			super.clCnx();
 			return liste;
 			}
 		catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return liste;
 		}
 	}

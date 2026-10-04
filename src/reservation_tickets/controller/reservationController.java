@@ -16,10 +16,13 @@ public class reservationController extends Config{
 			PreparedStatement s=super.getCnx().prepareStatement(requete);
 			s.setInt(1,R.getTrip());
 			s.setInt(2,R.getTemps());
-			return s.executeUpdate()==1;
+			boolean ok=s.executeUpdate()==1;
+			super.clCnx();
+			return ok;
 		}
 		catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return false;
 		}
 	}

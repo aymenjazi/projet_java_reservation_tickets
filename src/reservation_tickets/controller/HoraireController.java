@@ -29,10 +29,12 @@ public class HoraireController extends Config{
 				liste.add(h);
 				ok=result.next();
 			}
+			super.clCnx();
 			return liste;
 		}
 		catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return liste;
 		}
 	}

@@ -41,10 +41,12 @@ public class TripController extends Config {
 				t.setArrivee(result.getInt("ville_retour"));
 				t.setId(result.getInt("id"));
 			}
+			super.clCnx();
 			return t;	
 		}
 		catch(SQLException e) {
 			JOptionPane.showConfirmDialog(null, e.getMessage());
+			super.clCnx();
 			return t;
 		}
 	}
@@ -56,14 +58,18 @@ public class TripController extends Config {
 			ResultSet result=s.executeQuery();
 			boolean move=result.next();
 			if(move) {
-				return result.getInt("prix");
+				int x=result.getInt("prix");
+				super.clCnx();
+				return x;
 			}
 			else {
+				super.clCnx();
 				return 0;
 			}
 		}
 		catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return 0;
 		}
 	}

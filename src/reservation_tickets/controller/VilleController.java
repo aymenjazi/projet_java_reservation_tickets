@@ -26,9 +26,11 @@ public class VilleController extends Config {
 				liste.add(v);
 			}
 			System.out.println(liste);
+			super.clCnx();
 			return liste;
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return liste;
 		}
 	}
@@ -43,10 +45,12 @@ public class VilleController extends Config {
 				v.setId(result.getInt("id"));
 				v.setNom(result.getString("nom"));
 			}
+			super.clCnx();
 			return v;
 		}
 		catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
+			super.clCnx();
 			return v;
 		}
 	}

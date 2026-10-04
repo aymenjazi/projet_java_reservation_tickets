@@ -56,7 +56,7 @@ public class tripsclass {
 		calculer.addActionListener(action->{
 			TripController tc=new TripController();
 			int calcul=tc.calculerprix(t.getArrivee());
-			label_prix.setText(label_prix.getText()+String.valueOf(calcul));
+			label_prix.setText("prix= "+String.valueOf(calcul));
 			});
 		panel_utilisateur.add(calculer);
 		JButton confirmer=new JButton();
